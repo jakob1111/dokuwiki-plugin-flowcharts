@@ -1,5 +1,5 @@
 # Flowcharts Plugin for DokuWiki
-![screenshot diagram](screenshotflowchart.png)
+![screenshot diagram](screnshotflowchart.png)
 
 Add flowcharts and diagrams to Dokuwiki with an intuitive syntax
 
