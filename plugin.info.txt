@@ -1,0 +1,7 @@
+base   mermaidflowcharts
+author Jakob Schwichtenberg
+email  mail@jakobschwichtenberg.com
+date   2018-04-28
+name   mermaidflowcharts plugin
+desc   Create flowcharts and diagrams with an incredibly simple syntax
+url    https://github.com/jakob1111/dokuwiki-plugin-mermaid
