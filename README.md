@@ -42,8 +42,7 @@ graph TD;
     A-->B;
     A-->C;
     B-->D;
-    C-->D;
-    
+    C-->D;    
 click A "SOMEPAGE"
 </flow>
 ```
