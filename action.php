@@ -1,6 +1,6 @@
 <?php
 /**
- * DokuWiki Plugin mermaidflowcharts (Action Component)
+ * DokuWiki Plugin flowcharts (Action Component)
  *
  * @license GPL 2 http://www.gnu.org/licenses/gpl-2.0.html
  * @author  Jakob Schwichtenberg <mail@jakobschwichtenberg.com>
@@ -11,7 +11,7 @@ if (!defined('DOKU_INC')) {
     die();
 }
 
-class action_plugin_mermaidflowcharts extends DokuWiki_Action_Plugin
+class action_plugin_flowcharts extends DokuWiki_Action_Plugin
 {
 
  public function register(Doku_Event_Handler $controller) {
