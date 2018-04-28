@@ -1,4 +1,4 @@
-base   mermaidflowcharts
+base   flowcharts
 author Jakob Schwichtenberg
 email  mail@jakobschwichtenberg.com
 date   2018-04-28
