@@ -5,7 +5,7 @@ The diagrams and flowcharts are generated with https://mermaidjs.github.io/ and 
 
 ```diff
 - With the current version of the plugin it is crucial to remove 
-- the following lines from the file conf/entities.conf. 
+- the following lines from the Dokuwiki file conf/entities.conf. 
 ```
 
 ```
