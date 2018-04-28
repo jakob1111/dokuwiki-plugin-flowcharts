@@ -1,4 +1,6 @@
 # Flowcharts Plugin for DokuWiki
+![screenshot diagram](screenshotflowchart.png)
+
 Add flowcharts and diagrams to Dokuwiki with an intuitive syntax
 
 The diagrams and flowcharts are generated with https://mermaidjs.github.io/.
