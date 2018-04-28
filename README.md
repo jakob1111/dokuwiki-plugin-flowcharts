@@ -15,6 +15,11 @@ graph TD;
 </flow>
 ```
 
+will be rendered to
+
+![example diagram](examplediagram.png)
+
+
 For further details on the syntax, see https://mermaidjs.github.io/.
 
 If you install this plugin manually, make sure it is installed in
