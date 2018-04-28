@@ -3,7 +3,7 @@ mermaidflowcharts Plugin for DokuWiki
 Create flowcharts and diagrams with an incredibly simple syntax
 
 All documentation for this plugin can be found at
-https://github.com/jakob1111/dokuwiki-plugin-mermaid
+https://www.dokuwiki.org/plugin:flowcharts
 
 If you install this plugin manually, make sure it is installed in
 lib/plugins/mermaidflowcharts/ - if the folder is called different it
