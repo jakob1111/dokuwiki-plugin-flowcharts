@@ -59,7 +59,7 @@ Please refer to http://www.dokuwiki.org/plugins for additional info
 on how to install plugins in DokuWiki.
 
 ----
-Copyright (C) Jakob Schwichtenberg <mail@jakobschwichtenberg.com>
+Plugin by Jakob Schwichtenberg http://jakobschwichtenberg.com
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
