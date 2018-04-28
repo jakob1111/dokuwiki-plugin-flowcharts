@@ -32,6 +32,20 @@ will be rendered to
 
 ![example diagram](examplediagram.png)
 
+A nice feature is that each element of a diagram can be made clickable by using
+
+```
+<flow>
+graph TD;
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;
+    
+click A "SOMEPAGE"
+</flow>
+```
+Clicking on `A` will take you to http://yoururl.com/SOMEPAGE. 
 
 For further details on the syntax, see https://mermaidjs.github.io/.
 
