@@ -5,6 +5,7 @@ The diagrams and flowcharts are generated with https://mermaidjs.github.io/.
 
 # Syntax
 
+```
 <flow>
 graph TD;
     A-->B;
@@ -12,6 +13,7 @@ graph TD;
     B-->D;
     C-->D;
 </flow>
+```
 
 For further details on the syntax, see https://mermaidjs.github.io/.
 
