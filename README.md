@@ -3,10 +3,8 @@ Add flowcharts and diagrams to Dokuwiki with an intuitive syntax
 
 The diagrams and flowcharts are generated with https://mermaidjs.github.io/.
 
-```diff
-- With the current version of the plugin it is crucial to remove 
-- the following lines from the Dokuwiki file conf/entities.conf. 
-```
+**With the current version of the plugin it is crucial to remove the following lines from the Dokuwiki file conf/entities.conf** 
+
 
 ```
 <->     ↔
