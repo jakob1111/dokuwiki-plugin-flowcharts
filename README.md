@@ -4,7 +4,8 @@ Add flowcharts and diagrams to Dokuwiki with an intuitive syntax
 The diagrams and flowcharts are generated with https://mermaidjs.github.io/ and also https://github.com/splitbrain/dokuwiki/blob/master/conf/entities.conf. 
 
 ```diff
-- With the current version of the plugin it is crucial to remove the following lines from the file conf/entities.conf. 
+- With the current version of the plugin it is crucial to remove 
+- the following lines from the file conf/entities.conf. 
 ```
 
 ```
