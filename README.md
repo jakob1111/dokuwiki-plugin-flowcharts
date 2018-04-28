@@ -1,5 +1,5 @@
 # Flowcharts Plugin for DokuWiki
-Add flowcharts and diagrams to Dokuwiki with an incredibly simple syntax
+Add flowcharts and diagrams to Dokuwiki with an intuitive syntax
 
 The diagrams and flowcharts are generated with https://mermaidjs.github.io/. 
 
