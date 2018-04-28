@@ -47,7 +47,7 @@ click A "SOMEPAGE"
 ```
 Clicking on `A` will take you to http://yoururl.com/SOMEPAGE. 
 
-For further details on the syntax, see https://mermaidjs.github.io/.
+For further details on the syntax, see https://mermaidjs.github.io/. Diagrams can be built in realtime using https://mermaidjs.github.io/mermaid-live-editor/.
 
 If you install this plugin manually, make sure it is installed in
 lib/plugins/mermaidflowcharts/ - if the folder is called different it
