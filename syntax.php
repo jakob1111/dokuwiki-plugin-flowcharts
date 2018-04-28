@@ -1,6 +1,6 @@
 <?php
 /**
- * DokuWiki Plugin mermaidflowcharts (Syntax Component)
+ * DokuWiki Plugin flowcharts (Syntax Component)
  *
  * @license GPL 2 http://www.gnu.org/licenses/gpl-2.0.html
  * @author  Jakob Schwichtenberg <mail@jakobschwichtenberg.com>
@@ -16,7 +16,7 @@ if (!defined('DOKU_INC')) {
 * require_once(DOKU_PLUGIN.'syntax.php');
 */
 
-class syntax_plugin_mermaidflowcharts extends DokuWiki_Syntax_Plugin
+class syntax_plugin_flowcharts extends DokuWiki_Syntax_Plugin
 {
     function getType(){ return 'container'; }
     function getPType(){ return 'normal'; }
@@ -37,15 +37,15 @@ class syntax_plugin_mermaidflowcharts extends DokuWiki_Syntax_Plugin
      * @param string $mode Parser mode
      */
      function connectTo($mode) {       
-        $this->Lexer->addEntryPattern('<flow>(?=.*?</flow>)',$mode,'plugin_mermaidflowcharts');
+        $this->Lexer->addEntryPattern('<flow>(?=.*?</flow>)',$mode,'plugin_flowcharts');
     }
     function postConnect() {
-        $this->Lexer->addExitPattern('</flow>','plugin_mermaidflowcharts');
+        $this->Lexer->addExitPattern('</flow>','plugin_flowcharts');
     }
 
 
     /**
-     * Handle matches of the mermaidflowcharts syntax
+     * Handle matches of the flowcharts syntax
      */
     function handle($match, $state, $pos, &$handler){
         switch ($state) {
