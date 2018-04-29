@@ -33,7 +33,6 @@ class syntax_plugin_flowcharts extends DokuWiki_Syntax_Plugin
     /**
      * Connect lookup pattern to lexer.
      *
-     
      * @param string $mode Parser mode
      */
      function connectTo($mode) {       
