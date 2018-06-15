@@ -18,12 +18,8 @@ if (!defined('DOKU_INC')) {
 
 class syntax_plugin_flowcharts extends DokuWiki_Syntax_Plugin
 {
-    function getType(){ return 'container'; }
-    function getPType(){ return 'normal'; }
-    function getAllowedTypes() { 
-        return array('container','substition','protected','disabled','formatting','paragraphs');
-    }
- 
+    function getType(){ return 'protected'; }
+
     // must return a number lower than returned by native 'code' mode (200)
     function getSort(){ return 158; }
 
@@ -49,8 +45,7 @@ class syntax_plugin_flowcharts extends DokuWiki_Syntax_Plugin
     function handle($match, $state, $pos, Doku_Handler $handler){
         switch ($state) {
             case DOKU_LEXER_ENTER:
-                $data = strtolower(trim(substr($match,6,-1)));
-                return array($state, $data);
+                return array($state, '');
  
             case DOKU_LEXER_UNMATCHED : 
                 return array($state, $match);
@@ -72,7 +67,7 @@ class syntax_plugin_flowcharts extends DokuWiki_Syntax_Plugin
             switch ($state) {
  
             case DOKU_LEXER_ENTER :      
-                $renderer->doc .= '</p><div class="mermaid">';
+                $renderer->doc .= '<div class="mermaid">';
                 break;
  
               case DOKU_LEXER_UNMATCHED : 
@@ -80,7 +75,7 @@ class syntax_plugin_flowcharts extends DokuWiki_Syntax_Plugin
                 break;
  
               case DOKU_LEXER_EXIT :
-                $renderer->doc .= "</div><p>";
+                $renderer->doc .= "</div>";
                 break;
             }
             return true;
