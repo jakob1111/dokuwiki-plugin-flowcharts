@@ -24,7 +24,7 @@ class action_plugin_flowcharts extends DokuWiki_Action_Plugin
                             'type'    => 'text/javascript',
                             'charset' => 'utf-8',
                             '_data'   => '',
-                            'src'     => 'https://unpkg.com/mermaid@8.0.0-rc.8/dist/mermaid.js');
+                            'src'     => 'mermaid.min.js');
     }
 
 }
