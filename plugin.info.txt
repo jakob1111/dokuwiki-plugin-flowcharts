@@ -1,7 +1,7 @@
 base   flowcharts
 author Jakob Schwichtenberg
 email  mail@jakobschwichtenberg.com
-date   2018-06-15
+date   2018-12-11
 name   flowcharts Plugin
 desc   Create flowcharts and diagrams with an incredibly simple syntax
 url    https://www.dokuwiki.org/plugin:flowcharts
