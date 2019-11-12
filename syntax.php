@@ -66,7 +66,7 @@ class syntax_plugin_flowcharts extends DokuWiki_Syntax_Plugin
             case DOKU_LEXER_ENTER :
                   // securityLevel loose allows more advanced functionality such as subgraphs to run.
                   // @todo: this should be an option in the interface.
-                  $renderer->doc .= "<script>mermaidAPI.initialize({securityLevel: 'loose'});</script>";
+                  $renderer->doc .= "<script>mermaidAPI.initialize({securityLevel: 'loose',flowchart:{useMaxWidth:false,width:'50%'},theme:'dark'});</script><style>.mermaid svg {width: 100%}</style>";
                   $renderer->doc .= '<div class="mermaid">';
                   break;
               case DOKU_LEXER_UNMATCHED :
