@@ -25,6 +25,18 @@ class action_plugin_flowcharts extends DokuWiki_Action_Plugin
                             'charset' => 'utf-8',
                             '_data'   => '',
                             'src' => DOKU_BASE."lib/plugins/flowcharts/mermaid.min.js");
+        
+        $event->data['script'][] = array(
+                            'type'    => 'text/javascript',
+                            'charset' => 'utf-8',
+                            '_data'   => '',
+                            'src' => DOKU_BASE."lib/plugins/flowcharts/mermaid-init.js");
+
+        $event->data['link'][] = array (
+                            'rel'     => 'stylesheet',
+                            'type'    => 'text/css',
+                            'href'    => DOKU_BASE."lib/plugins/flowcharts/mermaid-override.css",
+                    );
 
     }
 
