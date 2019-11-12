@@ -1,0 +1,3 @@
+mermaidAPI.initialize({
+	securityLevel: 'loose'
+});

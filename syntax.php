@@ -63,7 +63,9 @@ class syntax_plugin_flowcharts extends DokuWiki_Syntax_Plugin
             list($state, $match) = $indata;
             switch ($state) {
  
-            case DOKU_LEXER_ENTER :      
+            case DOKU_LEXER_ENTER :
+                  // securityLevel loose allows more advanced functionality such as subgraphs to run.
+                  // @todo: this should be an option in the interface.
                   $renderer->doc .= '<div class="mermaid">';
                   break;
               case DOKU_LEXER_UNMATCHED :
