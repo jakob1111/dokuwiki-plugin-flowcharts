@@ -18,19 +18,18 @@ class action_plugin_flowcharts extends DokuWiki_Action_Plugin
         $controller->register_hook('TPL_METAHEADER_OUTPUT', 'BEFORE', $this,
                                    '_loadmermaid');
     }
- 
+
     public function _loadmermaid(Doku_Event $event, $param) {
         $event->data['script'][] = array(
                             'type'    => 'text/javascript',
                             'charset' => 'utf-8',
                             '_data'   => '',
                             'src' => DOKU_BASE."lib/plugins/flowcharts/mermaid.min.js");
-        
+
         $event->data['script'][] = array(
-                            'type'    => 'text/javascript',
-                            'charset' => 'utf-8',
-                            '_data'   => '',
-                            'src' => DOKU_BASE."lib/plugins/flowcharts/mermaid-init.js");
+                    'type'    => 'text/javascript',
+                    'charset' => 'utf-8',
+                    '_data'   => 'mermaid.initialize({securityLevel: "loose"});');
 
         $event->data['link'][] = array (
                             'rel'     => 'stylesheet',
