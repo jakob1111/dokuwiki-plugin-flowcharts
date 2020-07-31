@@ -6,6 +6,8 @@
  * @author  Jakob Schwichtenberg <mail@jakobschwichtenberg.com>
  */
 
+use dokuwiki\Parsing\Parser;
+
 // must be run within Dokuwiki
 if (!defined('DOKU_INC')) {
     die();
@@ -28,7 +30,7 @@ class syntax_plugin_flowcharts extends DokuWiki_Syntax_Plugin
      *
      * @param string $mode Parser mode
      */
-     function connectTo($mode) {       
+     function connectTo($mode) {
         $this->Lexer->addEntryPattern('<flow>(?=.*?</flow>)',$mode,'plugin_flowcharts');
     }
     function postConnect() {
@@ -43,14 +45,14 @@ class syntax_plugin_flowcharts extends DokuWiki_Syntax_Plugin
         switch ($state) {
             case DOKU_LEXER_ENTER:
                 return array($state, '');
- 
-            case DOKU_LEXER_UNMATCHED : 
+
+            case DOKU_LEXER_UNMATCHED :
                 return array($state, $match);
- 
+
             case DOKU_LEXER_EXIT :
                 return array($state, '');
- 
-        }       
+
+        }
         return false;
     }
 
@@ -62,7 +64,7 @@ class syntax_plugin_flowcharts extends DokuWiki_Syntax_Plugin
         if($mode == 'xhtml'){
             list($state, $match) = $indata;
             switch ($state) {
- 
+
             case DOKU_LEXER_ENTER :
                   // securityLevel loose allows more advanced functionality such as subgraphs to run.
                   // @todo: this should be an option in the interface.
@@ -94,7 +96,7 @@ class syntax_plugin_flowcharts extends DokuWiki_Syntax_Plugin
         $std_modes = array('internallink', 'media','externallink');
 
         foreach($std_modes as $m){
-            $class = "Doku_Parser_Mode_$m";
+            $class = 'dokuwiki\\Parsing\\ParserMode\\'.ucfirst($m);
             $obj   = new $class();
             $modes[] = array(
                 'sort' => $obj->getSort(),
@@ -107,7 +109,7 @@ class syntax_plugin_flowcharts extends DokuWiki_Syntax_Plugin
         $fmt_modes = array('strong','emphasis','underline','monospace',
                            'subscript','superscript','deleted');
         foreach($fmt_modes as $m){
-            $obj   = new Doku_Parser_Mode_formatting($m);
+            $obj   = new \dokuwiki\Parsing\ParserMode\Formatting($m);
             $modes[] = array(
                 'sort' => $obj->getSort(),
                 'mode' => $m,
@@ -115,22 +117,18 @@ class syntax_plugin_flowcharts extends DokuWiki_Syntax_Plugin
             );
         }
 
-        // Create the parser
-        $Parser = new Doku_Parser();
-
-        // Add the Handler
-        $Parser->Handler = new Doku_Handler();
+        // Create the parser and handler
+        $Parser = new Parser(new Doku_Handler());
 
         //add modes to parser
         foreach($modes as $mode){
             $Parser->addMode($mode['mode'],$mode['obj']);
         }
-        $Parser->connectModes();
-
-        $Parser->Lexer->parse($text);
 
         // Do the parsing
-        return $Parser->Handler->calls;
+        $p = $Parser->parse($text);
+
+        return $p;
     }
 
     public function p_render($instructions) {
@@ -142,7 +140,7 @@ class syntax_plugin_flowcharts extends DokuWiki_Syntax_Plugin
         $Renderer->interwiki = getInterwiki();
 
         // Loop through the instructions
-        foreach ( $instructions as $instruction ) {
+        foreach ($instructions as $instruction) {
             // Execute the callback against the Renderer
             if(method_exists($Renderer, $instruction[0])){
                 call_user_func_array(array(&$Renderer, $instruction[0]), $instruction[1] ? $instruction[1] : array());
