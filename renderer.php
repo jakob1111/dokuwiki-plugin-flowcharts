@@ -22,7 +22,6 @@ class renderer_plugin_flowcharts extends Doku_Renderer_xhtml {
     function internallink($id, $name = null, $search = null, $returnonly = false, $linktype = 'content') {
         $xhtml = parent::internallink($id, $name, $search, true, $linktype);
 
-
         $xhtml = htmlentities($xhtml,ENT_NOQUOTES);
         $xhtml = str_replace(array('"', '='), array('&#39;', '&#61;'), $xhtml);
 
@@ -36,7 +35,6 @@ class renderer_plugin_flowcharts extends Doku_Renderer_xhtml {
 
     function externallink($url, $name = null, $returnonly = false) {
         $xhtml = parent::externallink($url, $name = null, true);
-
 
         $xhtml = htmlentities($xhtml,ENT_NOQUOTES);
         $xhtml = str_replace(array('"', '='), array('&#39;', '&#61;'), $xhtml);
@@ -71,5 +69,19 @@ class renderer_plugin_flowcharts extends Doku_Renderer_xhtml {
      */
     function cdata($text) {
         $this->doc .= $text;
+    }
+
+    /**
+     * Open a paragraph
+     */
+    public function p_open() {
+        //ignore
+    }
+
+    /**
+     * Close a paragraph
+     */
+    public function p_close() {
+        //ignore
     }
 }
