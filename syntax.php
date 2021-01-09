@@ -90,6 +90,9 @@ class syntax_plugin_flowcharts extends DokuWiki_Syntax_Plugin
      */
     function p_get_instructions($text) {
 
+        //import parser classes and mode definitions
+        require_once DOKU_INC . 'inc/parser/parser.php';
+
         $modes = array();
 
         // add default modes
